@@ -1,0 +1,327 @@
+{
+  "home": { 
+    "title": "WELCOME TO",
+    "d_luck": "D-LUCK PROPERTY",
+    "buy": "Buy",
+    "rent": "Rent",
+    "price": "Price",
+    "select_area": "Select Area",
+    "advance_search": "Advance Search",
+    "subtitle": "The best property website in Thailand",
+    "developer": "Proeperty Developer",
+    "featured": {
+      "title": "Discover Our Featured Listings",
+      "subtitle": "Aliquam lacinia diam quis lacus euismod",
+      "seeAll": "See All Properties"
+    },
+    "propertyTypes": {
+      "title": "Property Types",
+      "subtitle": "Discover Pattaya Properties for Sale and Rent - Condos, Pool Villa, House & Commercial Real Estate",
+      "noPropertyTypesFound": "ไม่พบประเภทอสังหาริมทรัพย์"
+    },
+    "ExploreLocations": {
+      "title": "Explore Locations",
+      "subtitle": "Buying and renting condos, houses, and pool villas in Pattaya and surrounding areas: Jomtien, Pratumnak Hill, Bang Saray, East Pattaya, Baan Amphur, Naklua, and Sattahip.",
+      "more": "More",
+      "properties": "Properties",
+      "errorFetching": "Error loading locations. Please try again later."
+    },
+    "service": {
+      "title": "Together, We'll Find Your Perfect Selling Path",
+      "subtitle": "Ready to Buy or Sell Property in Pattaya? We're Here to Help",
+      "property_management": "Property Management",
+      "property_onine": "Professional Online Property Marketing Management",
+      "mortgate_service": "Mortgate Services",
+      "mortgate_service_description": "Thailand Bank Financing Assistance for Property Buyers",
+      "legal_service": "Legal Services - Visa",
+      "legal_service_description": "Legal Documentation Support for Property Transfer Services"
+    },
+    "meetOurTeam": {
+      "title": "Meet Our Team",
+      "subtitle": "Our experienced consultants are ready to make your property dreams come true.",
+      "out_team": "Our Team",
+      "oat": "Oat - Supakorn",
+      "oat_description": "CEO & Founder",
+      "emy": "Amy - Thannaree",
+      "emy_description": "Sale Director",
+      "ice": "Ize - Chanyapak",
+      "ice_description": "Sale Manager"
+    },
+    "randomProperties": {
+      "title": "Featured Properties",
+      "subtitle": "Quality properties in Pattaya, specially selected for you",
+      "loading": "Loading properties...",
+      "error": "Error loading properties",
+      "retry": "Retry",
+      "bed": "bed",
+      "bath": "bath",
+      "sqm": "sqm"
+    },
+    "blogs": {
+      "section": {
+        "title": "From Our Blog",
+        "subtitle": "Discover valuable insights to help you make smarter property decisions.",
+        "viewAll": "View all articles"
+      },
+      "error": {
+        "fetch": "Failed to load blog posts. Please try again."
+      }
+    },
+    "contact": {
+      "title": "Need more information ?",
+      "subtitle": "Please don't hesitate to contact us for assistance.",
+      "name": "Your Name *",
+      "lastName": "Last Name *",
+      "email": "Email Address *",
+      "subject": "Subject *",
+      "message": "Your Message *",
+      "sendMessage": "Send Message",
+      "messageSent": "Your message has been sent successfully",
+      "messageError": "There was an error sending your message. Please try again."
+    }
+  },
+  "home": {
+    "welcome": "ДОБРО ПОЖАЛОВАТЬ НА",
+    "d_luck": "D-LUCK PROPERTY",
+    "buy": "Купить",
+    "rent": "Аренда",
+    "price": "цена",
+    "select_area": "Выберите область",
+    "advance_search": "Расширенный поиск",
+    "title": "ЛУЧШИЙ САЙТ НЕДВИЖИМОСТИ В ПАТТАЙЕ, ТАИЛАНД",
+    "developer": "Застройщик недвижимости",
+    "featured": {
+      "title": "Откройте для себя наши избранные объявления",
+      "subtitle": "Aliquam lacinia diam quis lacus euismod",
+      "seeAll": "Посмотреть все объекты"
+    },
+    "randomProperties": {
+      "title": "Откройте для себя наши избранные списки",
+      "subtitle": "НАЙДИТЕ СВОЮ НЕДВИЖИМОСТЬ В ПАТТАЙЕ",
+      "seeAll": "Посмотреть все объекты недвижимости",
+      "loading": "Loading properties...",
+      "error": "Error loading properties",
+      "retry": "Retry",
+      "bed": "bed",
+      "bath": "bath",
+      "sqm": "sqm"
+    },
+    "ExploreLocations": {
+      "title": "Популярные места в Паттайе",
+      "subtitle": "Кондоминиумы, дома и виллы с бассейном на продажу и в аренду в Паттайе и окрестностях: Джомтьен, Кхао Пратамнак, Банг Сарай, Восточная Паттайя, Бан Ампур, На Клуа и Саттахип",
+      "more": "Подробнее",
+      "properties": "списки",
+      "errorFetching": "Ошибка при получении списков"
+    },
+    "propertyTypes": {
+      "title": "Типы недвижимости",
+      "subtitle": "Откройте для себя недвижимость в Паттайе на продажу и в аренду — квартиры, виллы с бассейном, дома и коммерческая недвижимость"
+    },
+    "service": {
+      "title": "Вместе мы найдем идеальную стратегию продажи для вас",
+      "subtitle": "Готовы купить или продать недвижимость в Паттайе? Мы здесь, чтобы помочь",
+      "property_management": "Управление недвижимостью",
+      "property_onine": "Профессиональное управление онлайн-маркетингом недвижимости",
+      "mortgate_service": "Ипотечные услуги",
+      "mortgate_service_description": "Помощь в получении финансирования от тайских банков для покупателей недвижимости",
+      "legal_service": "Юридические услуги - Визы",
+      "legal_service_description": "Поддержка в оформлении юридических документов для услуг по передаче недвижимости"
+    },
+    "meetOurTeam": {
+      "title": "Познакомьтесь с нашей командой",
+      "subtitle": "Наши опытные консультанты готовы воплотить ваши мечты о недвижимости в реальность.",
+      "out_team": "Наша команда",
+      "oat": "Oat - Supakorn",
+      "oat_description": "Генеральный директор и основатель",
+      "emy": "Amy - Thannaree",
+      "emy_description": "Директор по продажам",
+      "ice": "Ize - Chanyapak",
+      "ice_description": "Менеджер по продажам"
+    },
+    "blogs": {
+      "section": {
+        "title": "Из нашего блога",
+        "subtitle": "Откройте для себя ценные идеи, которые помогут вам принимать более разумные решения в сфере недвижимости.",
+        "viewAll": "View all articles"
+      },
+      "error": {
+        "fetch": "Failed to load blog posts. Please try again."
+      }
+    },
+    "contact": {
+      "title": "Нужна дополнительная информация ?",
+      "subtitle": "Свяжитесь с нами для получения дополнительной информации",
+      "name": "Имя *",
+      "lastName": "Фамилия *",
+      "email": "Электронная почта *",
+      "subject": "Тема *",
+      "message": "Ваше сообщение *",
+      "sendMessage": "отправлять",
+      "messageSent": "Ваше сообщение успешно отправлено",
+      "messageError": "Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз."
+    }
+  },
+  "home": {
+    "welcome": "欢迎来到",
+    "d_luck": "D-LUCK PROPERTY",
+    "title": "泰国芭堤雅最佳房地产网站",
+    "buy": "购买",
+    "rent": "租赁",
+    "price": "价格",
+    "select_area": "选择区域",
+    "advance_search": "高级搜索",
+    "developer": "房地产开发商",
+    "featured": {
+      "title": "发现我们的精选房源",
+      "subtitle": "Aliquam lacinia diam quis lacus euismod",
+      "seeAll": "See All Properties"
+    },
+    "randomProperties": {
+      "title": "探索我们的精选房源",
+      "subtitle": "在芭堤雅寻找您的房产",
+      "seeAll": "查看所有房源",
+      "loading": "Loading properties...",
+      "error": "Error loading properties",
+      "retry": "Retry",
+      "bed": "bed",
+      "bath": "bath",
+      "sqm": "sqm"
+    },
+    "ExploreLocations": {
+      "title": "芭堤雅热门地点",
+      "subtitle": "芭堤雅及周边地区公寓、别墅及泳池别墅出售及出租：乔木提恩、考帕图纳克、邦萨拉伊、东芭堤雅、班安普尔、纳克鲁亚和梭桃邑",
+      "more": "查看更多",
+      "properties": "列表",
+      "errorFetching": "Ошибка при получении списков"
+    },
+    "propertyTypes": {
+      "title": "探索芭提雅的房产类型",
+      "subtitle": "选择您的房产类型"
+    },
+    "service": {
+      "title": "携手为您找到完美的销售方案",
+      "subtitle": "准备在芭提雅买卖房产？我们随时为您提供帮助",
+      "property_management": "物业管理",
+      "property_onine": "专业在线房产营销管理服务",
+      "mortgate_service": "抵押贷款服务",
+      "mortgate_service_description": "为房产买家提供泰国银行融资协助",
+      "legal_service": "法律服务 - 签证",
+      "legal_service_description": "房产过户法律文件支持服务"
+    },
+    "meetOurTeam": {
+      "title": "认识我们的团队",
+      "subtitle": "我们经验丰富的顾问随时准备助您实现置业梦想。",
+      "out_team": "我们的团队",
+      "oat": "Oat - Supakorn",
+      "oat_description": "首席执行官兼创始人",
+      "emy": "Amy - Thannaree",
+      "emy_description": "销售总监",
+      "ice": "Ize - Chanyapak",
+      "ice_description": "销售经理м"
+    },
+    "blogs": {
+      "section": {
+        "title": "来自我们的博客",
+        "subtitle": "发现有价值的见解，帮助您做出更明智的房产决策。",
+        "viewAll": "View all articles"
+      },
+      "error": {
+        "fetch": "Failed to load blog posts. Please try again."
+      }
+    },
+    "contact": {
+      "title": "需要更多资料吗 ?",
+      "subtitle": "请与我们联系以获取更多信息",
+      "name": "姓名",
+      "lastName": "姓",
+      "email": "邮箱",
+      "subject": "主题  *",
+      "message": "您的留言 ",
+      "sendMessage": "发送留言",
+      "messageSent": "ข้อความของคุณถูกส่งเรียบร้อยแล้ว!",
+      "messageError": "เกิดข้อผิดพลาดในการส่งข้อความ โปรดลองอีกครั้ง"
+    }
+  },
+  "home": {
+    "welcome": "ยินดีต้อนรับสู่",
+    "d_luck": "D-LUCK PROPERTY",
+    "buy": "ซื้อ",
+    "rent": "เช่า",
+    "title": "เว็บไซต์อสังหาริมทรัพย์ที่ดีที่สุดในพัทยา ประเทศไทย",
+    "price": "ราคา",
+    "select_area": "เลือกพื้นที่",
+    "advance_search": "การค้นหาขั้นสูง",
+    "developer": "ผู้พัฒนาอสังหาริมทรัพย์",
+    "featured": {
+      "title": "อสังหาฯเด่นของเรา",
+      "subtitle": "Aliquam lacinia diam quis lacus euismod",
+      "seeAll": "ดูอสังหาริมทรัพย์ทั้งหมด"
+    },
+    "ExploreLocations": {
+      "title": "ทำเลยอดนิยมในพัทยา",
+      "subtitle": "ขายและให้เช่าคอนโด บ้าน และพูลวิลล่า ในพัทยาและพื้นที่โดยรอบ: จอมเทียน เขาพระตำหนัก บางเสร่ พัทยาตะวันออก บ้านอำเภอ นาเกลือ และสัตหีบ์",
+      "more": "ดูเพิ่มเติม",
+      "properties": "รายการ",
+      "errorFetching": "เกิดข้อผิดพลาดในการโหลดข้อมูลทำเล โปรดลองอีกครั้งในภายหลัง"
+    },
+    "service": {
+      "title": "เราจะช่วยคุณค้นหาวิธีการขายที่เหมาะสมที่สุด",
+      "subtitle": "พร้อมที่จะซื้อหรือขายอสังหาริมทรัพย์ในพัทยาหรือยัง? เราพร้อมให้ความช่วยเหลือ์",
+      "property_management": "การจัดการอสังหาริมทรัพย์",
+      "property_onine": "บริการจัดการการตลาดออนไลน์สำหรับอสังหาริมทรัพย์แบบมืออาชีพ",
+      "mortgate_service": "ความช่วยเหลือด้านการจัดหาเงินทุนจากธนาคารไทยสำหรับผู้ซื้ออสังหาริมทรัพย์",
+      "mortgate_service_description": "เราช่วยคุณหาสินเชื่อที่อยู่อาศัยที่เหมาะสมที่สุดสำหรับอสังหาริมทรัพย์ของคุณ",
+      "legal_service": "บริการด้านกฎหมาย - วีซ่า",
+      "legal_service_description": "ความช่วยเหลือด้านเอกสารทางกฎหมายสำหรับบริการโอนกิจการอสังหาริมทรัพย์์"
+    },
+    "meetOurTeam": {
+      "title": "พบกับทีมงานของเรา",
+      "subtitle": "ที่ปรึกษาผู้เชี่ยวชาญของเรายินดีที่จะทำให้ความฝันด้านอสังหาริมทรัพย์ของคุณเป็นจริง",
+      "out_team": "ทีมงานของเรา",
+      "oat": "โอ๊ต - ศุภกร",
+      "oat_description": "CEO & Founder",
+      "emy": "เอมี่ - ธัญญ์นรี ",
+      "emy_description": "Sale Director",
+      "ice": "ไอซ์ - ชัญญาภัค",
+      "ice_description": "Sale Manager"
+    },
+    "randomProperties": {
+      "title": "อสังหาฯเด่นของเรา",
+      "subtitle": "ค้นหาอสังหาฯของคุณในพัทยา",
+      "loading": "กำลังโหลดข้อมูล...",
+      "seeAll": "ดูอสังหาริมทรัพย์ทั้งหมด",
+      "error": "เกิดข้อผิดพลาดในการโหลดข้อมูล",
+      "retry": "ลองใหม่",
+      "bed": "ห้องนอน",
+      "bath": "ห้องน้ำ",
+      "sqm": "ตร.ม."
+    },
+    "blogs": {
+      "section": {
+        "title": "บล็อกของเรา",
+        "subtitle": "ค้นพบข้อมูลเชิงลึกที่มีค่าเพื่อช่วยให้คุณตัดสินใจเรื่องอสังหาริมทรัพย์อย่างชาญฉลาด",
+        "viewAll": "ดูบทความทั้งหมด"
+      },
+      "error": {
+        "fetch": "ไม่สามารถโหลดบทความได้ โปรดลองอีกครั้ง"
+      }
+    },
+    "contact": {
+      "title": "ต้องการข้อมูลเพิ่มเติมหรือไม่?",
+      "subtitle": "กรุณาติดต่อเราเพื่อข้อข้อมูลเพิ่มเติม",
+      "name": "ชื่อ",
+      "lastName": "นามสกุล",
+      "email": "อีเมล",
+      "subject": "ข้อความของคุณ *",
+      "message": "ข้อความ",
+      "sendMessage": "ส่งข้อความ",
+      "messageSent": "ข้อความของคุณถูกส่งเรียบร้อยแล้ว!",
+      "messageError": "เกิดข้อผิดพลาดในการส่งข้อความ โปรดลองอีกครั้ง"
+    },
+    "propertyTypes": {
+      "title": "ประเภทอสังหาฯ",
+      "subtitle": "ค้นหาอสังหาฯในพัทยาสำหรับ:ซื้อ, ขายและให้เช่า - คอนโด พูลวิลล่า บ้าน และอสังหาริมทรัพย์เชิงพาณิชย์",
+      "noPropertyTypesFound": "ไม่พบประเภทอสังหาริมทรัพย์"
+    },
+  }
+}

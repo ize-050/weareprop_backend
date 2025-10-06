@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x=".78" y="1.71" width="18" height="20.57"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1413" data-name="Group 1413">
+    <g id="Group_386" data-name="Group 386">
+      <g id="Group_1371" data-name="Group 1371">
+        <g id="Group_392" data-name="Group 392">
+          <g class="cls-3">
+            <g id="Group_391" data-name="Group 391">
+              <path id="Path_197" data-name="Path 197" class="cls-1" d="M12.99,6.86c0-1.78-1.44-3.21-3.21-3.21s-3.21,1.44-3.21,3.21,1.44,3.21,3.21,3.21,3.21-1.44,3.21-3.21M4.64,6.86c0-2.84,2.3-5.14,5.14-5.14s5.14,2.3,5.14,5.14-2.3,5.14-5.14,5.14h0c-2.84,0-5.14-2.3-5.14-5.14M2.76,20.36h14.04c-.37-2.58-2.58-4.5-5.18-4.5h-3.67c-2.61,0-4.82,1.92-5.18,4.5h0ZM.78,21.09c0-3.96,3.2-7.16,7.16-7.16h3.68c3.96,0,7.16,3.2,7.16,7.16h0c0,.66-.53,1.2-1.19,1.2H1.97c-.66,0-1.19-.53-1.19-1.19h0"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <rect class="cls-1" x="19" y="1.71" width="2" height="6.44"/>
+    <rect class="cls-1" x="16.78" y="3.93" width="6.44" height="2"/>
+  </g>
+</svg>

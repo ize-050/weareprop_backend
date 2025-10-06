@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 35 35">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #8d0808;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="9.94" y="9.94" width="15.11" height="15.11"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1045" data-name="Group 1045">
+    <g id="logo-02">
+      <ellipse class="cls-3" cx="17.5" cy="17.5" rx="16.53" ry="17"/>
+    </g>
+    <g id="Group_384" data-name="Group 384">
+      <g class="cls-4">
+        <g id="Group_383" data-name="Group 383">
+          <path id="Path_193" data-name="Path 193" class="cls-1" d="M14.77,20.69c.75,0,1.37.61,1.37,1.37v.46l2.06-1.55c.24-.18.52-.27.82-.27h3.95c.25,0,.45-.2.46-.46v-8.2c0-.25-.2-.45-.46-.46h-10.93c-.25,0-.45.2-.46.46v8.2c0,.25.2.45.46.46h2.73ZM16.13,24.22h0s-.15.11-.15.11l-.49.36c-.14.1-.32.12-.48.04-.15-.08-.25-.23-.25-.41v-2.28h-2.73c-1.01,0-1.82-.82-1.82-1.82v-8.2c0-1.01.82-1.82,1.82-1.82h10.93c1.01,0,1.82.82,1.82,1.82v8.2c0,1.01-.82,1.82-1.82,1.82h-3.95l-2.88,2.16Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

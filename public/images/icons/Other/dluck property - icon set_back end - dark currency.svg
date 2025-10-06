@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #181a20;
+        font-family: Poppins-SemiBold, Poppins;
+        font-size: 9px;
+        font-weight: 600;
+      }
+
+      .cls-1, .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-4 {
+        stroke: #111;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Group_1414" data-name="Group 1414">
+    <g id="Group_1368" data-name="Group 1368">
+      <g id="Ellipse_19" data-name="Ellipse 19">
+        <circle class="cls-3" cx="12" cy="12" r="11"/>
+        <circle class="cls-4" cx="12" cy="12" r="10"/>
+      </g>
+      <g id="_" data-name=" " class="cls-2">
+        <text class="cls-1" transform="translate(9 15)"><tspan x="0" y="0">$</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

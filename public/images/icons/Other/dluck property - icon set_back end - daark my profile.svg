@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="3" y="2.78" width="18" height="20.57"/>
+    </clipPath>
+  </defs>
+  <g class="cls-2">
+    <g id="Group_391" data-name="Group 391">
+      <path id="Path_197" data-name="Path 197" d="M15.21,7.92c0-1.78-1.44-3.21-3.21-3.21s-3.21,1.44-3.21,3.21,1.44,3.21,3.21,3.21,3.21-1.44,3.21-3.21M6.86,7.92c0-2.84,2.3-5.14,5.14-5.14s5.14,2.3,5.14,5.14-2.3,5.14-5.14,5.14c0,0,0,0,0,0-2.84,0-5.14-2.3-5.14-5.14M4.98,21.42h14.04c-.37-2.58-2.58-4.5-5.18-4.5h-3.67c-2.61,0-4.82,1.92-5.18,4.5h0ZM3,22.16c0-3.96,3.2-7.16,7.16-7.16h3.68c3.96,0,7.16,3.2,7.16,7.16h0c0,.66-.53,1.2-1.19,1.2H4.19c-.66,0-1.19-.53-1.19-1.19h0"/>
+    </g>
+  </g>
+</svg>
