@@ -27,6 +27,7 @@ class SearchService {
         sort = 'createdAt',
         order = 'desc',
         type,
+        propertyQuota,
       } = filters;
       
       const skip = (page - 1) * Number(limit);
@@ -66,6 +67,11 @@ class SearchService {
       // Bathrooms filter
       if (bathrooms) {
         where.bathrooms = Number(bathrooms);
+      }
+      
+      // Property Quota filter (ownership_quota in database)
+      if (propertyQuota) {
+        where.ownershipQuota = propertyQuota.toUpperCase();
       }
       
       // Search text

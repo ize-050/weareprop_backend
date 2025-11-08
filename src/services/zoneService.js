@@ -15,7 +15,11 @@ class ZoneService {
       const { city, province, search, sort = 'name', order = 'asc' } = filters;
       
       // Build filter conditions
-      const where = {};
+      const where = {
+        name :{
+          in :['Jomtien','Wongamat beach','Pratumnak Hill','Central Pattaya']
+        }
+      };
       
       if (city) {
         where.city = city;
@@ -37,9 +41,9 @@ class ZoneService {
       // Get zones with filters
       const zones = await prisma.zone.findMany({
         where,
-        orderBy: {
-          [sort]: order.toLowerCase()
-        }
+        // orderBy: {
+        //   [sort]: order.toLowerCase()
+        // }
       });
 
       const datazone =[]
