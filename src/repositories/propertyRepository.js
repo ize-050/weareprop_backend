@@ -42,8 +42,6 @@ class PropertyRepository {
     // Build filter conditions
     const where = {
       deletedAt: null, // กรองเฉพาะรายการที่ยังไม่ถูก soft delete
-      listings: {
-      },
     }
 
     // Add search by title or description
@@ -62,23 +60,31 @@ class PropertyRepository {
     }
 
     if (propertyType) where.propertyTypeId = Number(propertyType);
-    if (listingType) where.listingType = listingType;
     if (city) where.city = city;
     if (bedrooms) where.bedrooms = Number(bedrooms);
     if (bathrooms) where.bathrooms = Number(bathrooms);
-
-    // Price range
-    if (minPrice || maxPrice) {
-      where.listings = {
-        some: {}
-      };
-      if (minPrice) where.listings.some.price = { ...where.listings.some.price, gte: Number(minPrice) };
-      if (maxPrice) where.listings.some.price = { ...where.listings.some.price, lte: Number(maxPrice) };
-    }
-
     if (zoneId) where.zoneId = Number(zoneId);
 
-    where.deletedAt = null;
+    // Build listings filter (for listingType and price range)
+    const listingsFilter = {};
+    if (listingType) {
+      listingsFilter.listingType = listingType;
+    }
+    if (minPrice || maxPrice) {
+      listingsFilter.price = {};
+      if (minPrice) listingsFilter.price.gte = Number(minPrice);
+      if (maxPrice) listingsFilter.price.lte = Number(maxPrice);
+    }
+
+    // Apply listings filter if any condition exists
+    if (Object.keys(listingsFilter).length > 0) {
+      where.listings = {
+        some: listingsFilter
+      };
+    }
+
+    console.log('🔍 PropertyRepository.findAll - Where:', JSON.stringify(where, null, 2));
+    console.log('🔍 ListingType:', listingType, 'ListingsFilter:', listingsFilter);
 
     
     // Execute query
