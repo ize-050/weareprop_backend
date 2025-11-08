@@ -62,16 +62,24 @@ class PropertyRepository {
     }
 
     if (propertyType) where.propertyTypeId = Number(propertyType);
-    if (listingType) where.listingType = listingType;
     if (city) where.city = city;
     if (bedrooms) where.bedrooms = Number(bedrooms);
     if (bathrooms) where.bathrooms = Number(bathrooms);
 
-    // Price range
-    if (minPrice || maxPrice) {
+    // Filter by listingType (SALE or RENT) - must be in listings relation
+    if (listingType) {
       where.listings = {
-        some: {}
+        some: {
+          listingType: listingType
+        }
       };
+    }
+
+    // Price range - merge with existing listings filter
+    if (minPrice || maxPrice) {
+      if (!where.listings) {
+        where.listings = { some: {} };
+      }
       if (minPrice) where.listings.some.price = { ...where.listings.some.price, gte: Number(minPrice) };
       if (maxPrice) where.listings.some.price = { ...where.listings.some.price, lte: Number(maxPrice) };
     }
