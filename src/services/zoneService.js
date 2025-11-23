@@ -37,9 +37,9 @@ class ZoneService {
       // Get zones with filters
       const zones = await prisma.zone.findMany({
         where,
-        orderBy: {
-          [sort]: order.toLowerCase()
-        }
+        // orderBy: {
+        //   [sort]: order.toLowerCase()
+        // }
       });
 
       const datazone =[]

@@ -16,6 +16,7 @@ const menuItemRoutes = require('./menuItemRoutes'); // เพิ่ม menuItemR
 const propertyTypeRoutes = require('./propertyTypeRoutes'); // เพิ่ม propertyTypeRoutes สำหรับการจัดการประเภทอสังหาริมทรัพย์
 const messagingSettingsRoutes = require('./messagingSettingsRoutes'); // เพิ่ม messagingSettingsRoutes สำหรับการจัดการ messaging settings
 
+
 const router = express.Router();
 
 // API routes
@@ -34,6 +35,7 @@ router.use('/icons', iconRoutes); // เพิ่ม icon routes
 router.use('/ui-strings', uiStringRoutes); // เพิ่ม UI strings routes สำหรับการจัดการภาษา
 router.use('/menu-items', menuItemRoutes); // เพิ่ม menu items routes สำหรับการจัดการเมนู
 router.use('/messaging-settings', messagingSettingsRoutes); // เพิ่ม messaging settings routes สำหรับการจัดการ messaging settings
+
 router.use('/', propertyTypeRoutes); // เพิ่ม property type routes
 
 // API documentation route
