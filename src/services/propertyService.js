@@ -146,7 +146,8 @@ class PropertyService {
    */
   async getAllProperties(queryParams) {
     try {
-      return await propertyRepository.findAll(queryParams);
+      const properties = await propertyRepository.findAll(queryParams);
+      return properties;
     } catch (error) {
       throw new ApiError(500, 'Error fetching properties', false, error.stack);
     }

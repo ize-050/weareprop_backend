@@ -18,6 +18,7 @@ class PropertyRepository {
    * Find all properties with pagination and filtering
    */
   async findAll(options = {}) {
+    console.log("options",options)
     const {
       page = 1,
       limit = 10,
@@ -36,8 +37,12 @@ class PropertyRepository {
       // status = 'ACTIVE',
     } = options;
 
+
+
     // Calculate pagination
     const skip = (page - 1) * limit;
+
+      console.log("propertyTypepropertyType",propertyType)
 
     // Build filter conditions
     const where = {
@@ -59,7 +64,13 @@ class PropertyRepository {
       where.userId = Number(userId);
     }
 
-    if (propertyType) where.propertyTypeId = Number(propertyType);
+  
+    // Filter by property type name (e.g., "Condo", "Villa", "House")
+    if (propertyType) {
+      where.propertyType = {
+        name: propertyType
+      };
+    }
     if (city) where.city = city;
     if (bedrooms) where.bedrooms = Number(bedrooms);
     if (bathrooms) where.bathrooms = Number(bathrooms);
@@ -104,6 +115,9 @@ class PropertyRepository {
             },
           },
           listings: true,
+          labels: true,
+          propertyType: true,
+          zone: true,
         },
         orderBy: {
           [sortBy]: sortOrder,
@@ -1574,104 +1588,104 @@ class PropertyRepository {
 
 
 
-  async findAll(options = {}) {
-    const {
-      page = 1,
-      limit = 10,
-      search = '',
-      sortBy = 'createdAt',
-      sortOrder = 'desc',
-    } = options;
+  // async findAll(options = {}) {
+  //   const {
+  //     page = 1,
+  //     limit = 10,
+  //     search = '',
+  //     sortBy = 'createdAt',
+  //     sortOrder = 'desc',
+  //   } = options;
 
-    const skip = (page - 1) * limit;
+  //   const skip = (page - 1) * limit;
 
-    const where = {
-      deletedAt: null,
-    };
+  //   const where = {
+  //     deletedAt: null,
+  //   };
 
-    if (search) {
-      where.OR = [
-        { title: { contains: search } },
-        { projectName: { contains: search } },
-        { description: { contains: search } },
-        { address: { contains: search } },
-        { propertyCode: { contains: search } },
-        { city: { contains: search } },
-        { district: { contains: search } },
-        { province: { contains: search } },
-      ];
-    }
+  //   if (search) {
+  //     where.OR = [
+  //       { title: { contains: search } },
+  //       { projectName: { contains: search } },
+  //       { description: { contains: search } },
+  //       { address: { contains: search } },
+  //       { propertyCode: { contains: search } },
+  //       { city: { contains: search } },
+  //       { district: { contains: search } },
+  //       { province: { contains: search } },
+  //     ];
+  //   }
 
-    const total = await prisma.property.count({ where });
-    let properties = [];
+  //   const total = await prisma.property.count({ where });
+  //   let properties = [];
 
-    if (sortBy === 'price') {
-      const sortDirection = sortOrder.toUpperCase() === 'DESC' ? Prisma.sql`DESC` : Prisma.sql`ASC`;
+  //   if (sortBy === 'price') {
+  //     const sortDirection = sortOrder.toUpperCase() === 'DESC' ? Prisma.sql`DESC` : Prisma.sql`ASC`;
       
-      let searchConditions = [];
-      if (search) {
-        const searchPattern = `%${search}%`;
-        searchConditions.push(Prisma.sql`p.title LIKE ${searchPattern}`);
-        searchConditions.push(Prisma.sql`p.project_name LIKE ${searchPattern}`);
-        searchConditions.push(Prisma.sql`p.description LIKE ${searchPattern}`);
-        searchConditions.push(Prisma.sql`p.address LIKE ${searchPattern}`);
-        searchConditions.push(Prisma.sql`p.property_code LIKE ${searchPattern}`);
-        searchConditions.push(Prisma.sql`p.city LIKE ${searchPattern}`);
-        searchConditions.push(Prisma.sql`p.district LIKE ${searchPattern}`);
-        searchConditions.push(Prisma.sql`p.province LIKE ${searchPattern}`);
-      }
-      const whereClause = searchConditions.length > 0 ? Prisma.sql`AND (${Prisma.join(searchConditions, ' OR ')})` : Prisma.empty;
+  //     let searchConditions = [];
+  //     if (search) {
+  //       const searchPattern = `%${search}%`;
+  //       searchConditions.push(Prisma.sql`p.title LIKE ${searchPattern}`);
+  //       searchConditions.push(Prisma.sql`p.project_name LIKE ${searchPattern}`);
+  //       searchConditions.push(Prisma.sql`p.description LIKE ${searchPattern}`);
+  //       searchConditions.push(Prisma.sql`p.address LIKE ${searchPattern}`);
+  //       searchConditions.push(Prisma.sql`p.property_code LIKE ${searchPattern}`);
+  //       searchConditions.push(Prisma.sql`p.city LIKE ${searchPattern}`);
+  //       searchConditions.push(Prisma.sql`p.district LIKE ${searchPattern}`);
+  //       searchConditions.push(Prisma.sql`p.province LIKE ${searchPattern}`);
+  //     }
+  //     const whereClause = searchConditions.length > 0 ? Prisma.sql`AND (${Prisma.join(searchConditions, ' OR ')})` : Prisma.empty;
 
-      const sortedIds = await prisma.$queryRaw`
-        SELECT p.id
-        FROM properties p
-        LEFT JOIN property_listings l ON p.id = l.property_id
-        WHERE p.deleted_at IS NULL ${whereClause}
-        GROUP BY p.id
-        ORDER BY AVG(l.price) ${sortDirection}
-        LIMIT ${Number(limit)}
-        OFFSET ${Number(skip)}
-      `;
+  //     const sortedIds = await prisma.$queryRaw`
+  //       SELECT p.id
+  //       FROM properties p
+  //       LEFT JOIN property_listings l ON p.id = l.property_id
+  //       WHERE p.deleted_at IS NULL ${whereClause}
+  //       GROUP BY p.id
+  //       ORDER BY AVG(l.price) ${sortDirection}
+  //       LIMIT ${Number(limit)}
+  //       OFFSET ${Number(skip)}
+  //     `;
 
-      const propertyIds = sortedIds.map(p => p.id);
+  //     const propertyIds = sortedIds.map(p => p.id);
 
-      if (propertyIds.length > 0) {
-        const fetchedProperties = await prisma.property.findMany({
-          where: { id: { in: propertyIds } },
-          include: {
-            images: true,
-            listings: true,
-            propertyType: true,
-            labels: true,
-          },
-        });
+  //     if (propertyIds.length > 0) {
+  //       const fetchedProperties = await prisma.property.findMany({
+  //         where: { id: { in: propertyIds } },
+  //         include: {
+  //           images: true,
+  //           listings: true,
+  //           propertyType: true,
+  //           labels: true,
+  //         },
+  //       });
         
-        const propertyMap = new Map(fetchedProperties.map(p => [p.id, p]));
-        properties = propertyIds.map(id => propertyMap.get(id));
-      }
-    } else {
-      properties = await prisma.property.findMany({
-        where,
-        orderBy: { [sortBy]: sortOrder },
-        skip,
-        take: Number(limit),
-        include: {
-          images: true,
-          listings: true,
-          propertyType: true,
-          labels: true,
-          _count: { select: { views: true } },
-        },
-      });
-    }
+  //       const propertyMap = new Map(fetchedProperties.map(p => [p.id, p]));
+  //       properties = propertyIds.map(id => propertyMap.get(id));
+  //     }
+  //   } else {
+  //     properties = await prisma.property.findMany({
+  //       where,
+  //       orderBy: { [sortBy]: sortOrder },
+  //       skip,
+  //       take: Number(limit),
+  //       include: {
+  //         images: true,
+  //         listings: true,
+  //         propertyType: true,
+  //         labels: true,
+  //         _count: { select: { views: true } },
+  //       },
+  //     });
+  //   }
 
-    return {
-      properties,
-      total,
-      page: Number(page),
-      limit: Number(limit),
-    };
-  }
+  //   return {
+  //     properties,
+  //     total,
+  //     page: Number(page),
+  //     limit: Number(limit),
+  //   };
+  // }
 
   async findByUserId(userId, options = {}) {
     const {

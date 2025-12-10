@@ -45,6 +45,7 @@ class PropertyController {
    */
   async getAllProperties(req, res, next) {
     try {
+      console.log("rrrrrrrr",req.query)
       const properties = await propertyService.getAllProperties(req.query);
       res.status(200).json({
         status: 'success',
