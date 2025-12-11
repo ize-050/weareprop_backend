@@ -15,11 +15,7 @@ class ZoneService {
       const { city, province, search, sort = 'name', order = 'asc' } = filters;
       
       // Build filter conditions
-      const where = {
-        name :{
-          in :['Jomtien','Wongamat beach','Pratumnak Hill','Central Pattaya']
-        }
-      };
+      const where = {};
       
       if (city) {
         where.city = city;
