@@ -1808,6 +1808,83 @@ class PropertyRepository {
     };
   }
 
+  /**
+   * Find all properties for backoffice (returns properties format instead of data format)
+   */
+  async findAllForBackoffice(queryParams = {}) {
+    const {
+      page = 1,
+      limit = 10,
+      search = '',
+      sortBy = 'createdAt',
+      sortOrder = 'desc',
+    } = queryParams;
+
+    const skip = (page - 1) * Number(limit);
+
+    const where = {
+      deletedAt: null,
+    };
+
+    if (search) {
+      where.OR = [
+        { title: { contains: search } },
+        { projectName: { contains: search } },
+        { description: { contains: search } },
+        { address: { contains: search } },
+        { propertyCode: { contains: search } },
+        { city: { contains: search } },
+        { district: { contains: search } },
+        { province: { contains: search } },
+      ];
+    }
+
+    const [properties, total] = await Promise.all([
+      prisma.property.findMany({
+        where,
+        orderBy: { [sortBy]: sortOrder },
+        skip,
+        take: Number(limit),
+        include: {
+          images: true,
+          listings: true,
+          propertyType: true,
+          labels: true,
+          _count: { select: { views: true } },
+        },
+      }),
+      prisma.property.count({ where }),
+    ]);
+
+    const processedProperties = properties.map(property => ({
+      ...property,
+      viewCount: property.viewCount || 0,
+      inquiryCount: property.interestedCount || 0,
+      formattedDate: property.createdAt ? new Date(property.createdAt).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }) : 'N/A',
+      featuredImage: property.images && property.images.length > 0
+        ? property.images.find(img => img.isFeatured) || property.images[0]
+        : null,
+    }));
+
+    const totalPages = Math.ceil(total / limit);
+    const hasNext = page < totalPages;
+    const hasPrev = page > 1;
+
+    return {
+      properties: processedProperties,
+      total,
+      page: Number(page),
+      limit: Number(limit),
+      totalPages,
+      hasNext,
+      hasPrev,
+    };
+  }
+
   async moveImagesFromTemp(propertyId, images) {
     const fs = require('fs');
     const path = require('path');

@@ -605,7 +605,7 @@ class PropertyService {
 
       let properties;
       if (user.role === 'ADMIN') {
-        properties = await propertyRepository.findAll(queryParams);
+        properties = await propertyRepository.findAllForBackoffice(queryParams);
       } else {
         properties = await propertyRepository.findByUserId(user.userId, queryParams);
       }
