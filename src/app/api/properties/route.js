@@ -14,7 +14,7 @@ export const config = {
   },
 };
 
-/**
+/**ฝฝหหดดห
  * สร้างไดเรกทอรีสำหรับเก็บรูปภาพ
  */
 const createUploadDirectories = (propertyId) => {
