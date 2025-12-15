@@ -70,7 +70,7 @@ model TypeProperty {
 model Property {
   id                     Int                 @id @default(autoincrement())
   title                  String
-  projectName            String              @map("project_name")
+  projectName            String?             @map("project_name")
   propertyCode           String?             @unique @map("property_code")
   referenceId            String?             @map("reference_id")
   address                String              @db.Text

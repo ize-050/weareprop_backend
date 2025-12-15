@@ -10,7 +10,7 @@ const propertyFormValidation = [
     .isString().withMessage('Title must be a string'),
   
   body('projectName')
-    .notEmpty().withMessage('Project name is required')
+    .optional()
     .isString().withMessage('Project name must be a string'),
   
   body('propertyType').notEmpty().withMessage('Property type is required'),

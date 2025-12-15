@@ -205,7 +205,7 @@ export async function POST(req) {
     const processedData = processFormFields(fields);
     
     // ตรวจสอบข้อมูลที่จำเป็น
-    const requiredFields = ['title', 'projectName', 'propertyType', 'address', 'district', 'province', 'city', 'zipCode', 'area', 'description'];
+    const requiredFields = ['title', 'propertyType', 'address', 'district', 'province', 'city', 'zipCode', 'area', 'description'];
     const missingFields = requiredFields.filter(field => !processedData[field]);
     
     if (missingFields.length > 0) {

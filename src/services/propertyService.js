@@ -461,8 +461,6 @@ class PropertyService {
           name: 'asc'
         }
       });
-      
-      // ดึงข้อมูลจำนวนอสังหาริมทรัพย์ในแต่ละประเภท
       const propertyCounts = await prisma.property.groupBy({
         by: ['propertyTypeId'],
         _count: {
