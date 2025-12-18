@@ -34,9 +34,14 @@ class ZoneService {
         ];
       }
       
-      // Get zones with filters
+      // Get zones with filters and property count
       const zones = await prisma.zone.findMany({
         where,
+        include: {
+          _count: {
+            select: { properties: true }
+          }
+        }
         // orderBy: {
         //   [sort]: order.toLowerCase()
         // }
@@ -58,6 +63,8 @@ class ZoneService {
         zone.name_ch = zone.nameCh || '';
         zone.name_ru = zone.nameRu || '';
 
+        // Add property count
+        zone.propertyCount = zone._count?.properties || 0;
 
         datazone.push(zone)
       }
