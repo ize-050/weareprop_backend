@@ -115,7 +115,14 @@ class PropertyRepository {
             },
           },
           listings: true,
-          labels: true,
+          labels: {
+            where: {
+              active: true
+            },
+            include: {
+              Icon: true
+            }
+          },
           propertyType: true,
           zone: true,
         },

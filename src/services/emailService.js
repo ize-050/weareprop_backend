@@ -62,20 +62,20 @@ class EmailService {
         throw new Error('Email transporter not initialized');
       }
 
-      // เพิ่ม D-Luck icon เป็น attachment
-      const iconPath = path.join(__dirname, '../../public/images/icon.png');
+      // เพิ่ม The 12 Real Estate logo เป็น attachment
+      const iconPath = path.join(__dirname, '../../public/images/logo/logoweare.png');
       const defaultAttachments = [];
       
       if (fs.existsSync(iconPath)) {
         defaultAttachments.push({
-          filename: 'dluck-icon.png',
+          filename: '12-real-estate-logo.png',
           path: iconPath,
-          cid: 'dluck-icon' // Content-ID สำหรับใช้ใน HTML
+          cid: '12-real-estate-logo' // Content-ID สำหรับใช้ใน HTML
         });
       }
 
       const mailOptions = {
-        from: `"D-Luck Property" <${process.env.EMAIL_USER}>`,
+        from: `"The 12 Real Estate Pattaya" <${process.env.EMAIL_USER}>`,
         to,
         subject,
         html,
@@ -108,9 +108,9 @@ class EmailService {
         <!-- Header with Logo -->
         <div style="background: #ffffff; padding: 30px 20px; text-align: center; border-bottom: 2px solid #f3f4f6;">
           <div style="margin-bottom: 20px;">
-            <img src="cid:dluck-icon" alt="D-Luck Property" style="width: 60px; height: 60px; object-fit: contain;" />
+            <img src="cid:12-real-estate-logo" alt="The 12 Real Estate" style="width: 120px; height: auto; object-fit: contain;" />
           </div>
-          <h1 style="color: #1f2937; margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.5px;">D-Luck Property</h1>
+          <h1 style="color: #1f2937; margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.5px;">The 12 Real Estate Pattaya</h1>
           <p style="color: #6b7280; margin: 8px 0 0 0; font-size: 14px; font-weight: 400;">Contact Form Submission</p>
         </div>
         
@@ -149,13 +149,13 @@ class EmailService {
         <div style="background: #f9fafb; padding: 20px; text-align: center; border-top: 1px solid #e5e7eb;">
           <div style="margin-bottom: 12px;">
             <p style="margin: 0; color: #6b7280; font-size: 13px; line-height: 1.5;">
-              This message was sent from <strong style="color: #374151;">D-Luck Property</strong> contact form<br>
+              This message was sent from <strong style="color: #374151;">The 12 Real Estate Pattaya</strong> contact form<br>
               Received: ${new Date().toLocaleString('th-TH', { timeZone: 'Asia/Bangkok' })}
             </p>
           </div>
           <div style="border-top: 1px solid #e5e7eb; padding-top: 12px;">
             <p style="margin: 0; color: #9ca3af; font-size: 11px;">
-              © 2025 D-Luck Property. All rights reserved.
+              © 2025 The 12 Real Estate Pattaya. All rights reserved.
             </p>
           </div>
         </div>
@@ -163,7 +163,7 @@ class EmailService {
     `;
 
     const textVersion = `
-      D-Luck Property - New Contact Form Submission
+      The 12 Real Estate Pattaya - New Contact Form Submission
       
       Contact Information:
       Name: ${name}
@@ -182,7 +182,7 @@ class EmailService {
     
     return await this.sendEmail({
       to: adminEmail,
-      cc: 'supakorn@d-luckproperty.com', // CC ไปที่ supakorn เสมอ
+      cc: 'krittiyakwang@gmail.com', // CC email
       subject: emailSubject,
       html,
       text: textVersion
@@ -316,7 +316,7 @@ class EmailService {
 
     return await this.sendEmail({
       to: agentEmail, // ส่งไปหาเจ้าของ property
-      cc: 'supakorn@d-luckproperty.com', // CC ไปที่ supakorn เสมอ
+      // CC ไปที่ supakorn เสมอ
       subject: emailSubject,
       html,
       text: textVersion

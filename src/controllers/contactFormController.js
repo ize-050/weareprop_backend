@@ -5,7 +5,7 @@ const { BadRequestError } = require('../utils/errors');
 class ContactFormController {
   async submitContactForm(req, res) {
     try {
-      const { name, email, phone, subject, message } = req.body;
+      const { name, email, phone, subject, message, propertyId, propertyTitle, to, cc } = req.body;
 
       // ตรวจสอบข้อมูลที่จำเป็น
       if (!name || !email || !message) {
@@ -33,7 +33,11 @@ class ContactFormController {
           email,
           phone,
           subject: subject || 'Contact Form Inquiry',
-          message
+          message,
+          propertyId,
+          propertyTitle,
+          to: to || 'info@12realestatepattaya.com',
+          cc: cc || 'krittiyakwang@gmail.com'
         });
 
         return res.status(200).json({
