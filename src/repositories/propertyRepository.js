@@ -47,6 +47,7 @@ class PropertyRepository {
     // Build filter conditions
     const where = {
       deletedAt: null, // กรองเฉพาะรายการที่ยังไม่ถูก soft delete
+      isPublished: true, // กรองเฉพาะรายการที่ published แล้ว
     }
 
     // Add search by title or description
@@ -104,8 +105,7 @@ class PropertyRepository {
         where,
         include: {
           images: {
-            where: { isFeatured: true },
-            take: 1,
+            orderBy: { sortOrder: 'asc' },
           },
           user: {
             select: {
