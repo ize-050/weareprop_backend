@@ -20,7 +20,7 @@ class ContactFormController {
 
       // ตรวจสอบรูปแบบเบอร์โทรศัพท์ (ถ้ามี)
       if (phone) {
-        const phoneRegex = /^[0-9+\-\s()]{9,15}$/;
+        const phoneRegex = /^[0-9+\-\s()]{7,20}$/;
         if (!phoneRegex.test(phone)) {
           throw new BadRequestError('Invalid phone number format');
         }
@@ -28,17 +28,26 @@ class ContactFormController {
 
       // ส่งอีเมล
       try {
-        await emailService.sendContactFormEmail({
-          name,
-          email,
-          phone,
-          subject: subject || 'Contact Form Inquiry',
-          message,
-          propertyId,
-          propertyTitle,
-          to: to || 'info@12realestatepattaya.com',
-          cc: cc || 'krittiyakwang@gmail.com'
-        });
+        if (propertyId) {
+          // ส่งไปหา agent ของ property โดยตรง
+          await emailService.sendPropertyInquiryEmail({
+            propertyId,
+            propertyTitle,
+            customerName: name,
+            customerEmail: email,
+            customerPhone: phone,
+            message
+          });
+        } else {
+          // ส่งไปหา admin (contact page ทั่วไป)
+          await emailService.sendContactFormEmail({
+            name,
+            email,
+            phone,
+            subject: subject || 'Contact Form Inquiry',
+            message
+          });
+        }
 
         return res.status(200).json({
           success: true,

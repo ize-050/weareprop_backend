@@ -13,7 +13,7 @@ class ContactService {
     }
 
     // ตรวจสอบรูปแบบเบอร์โทรศัพท์ (เบอร์ไทย)
-    const phoneRegex = /^[0-9]{9,10}$/;
+    const phoneRegex = /^[+]?[0-9\s\-()]{7,20}$/;
     if (!phoneRegex.test(contactData.phone)) {
       throw new BadRequestError('Invalid phone number format');
     }

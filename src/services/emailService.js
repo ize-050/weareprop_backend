@@ -223,9 +223,9 @@ class EmailService {
         <!-- Header with Logo -->
         <div style="background: #ffffff; padding: 30px 20px; text-align: center; border-bottom: 2px solid #f3f4f6;">
           <div style="margin-bottom: 20px;">
-            <img src="cid:dluck-icon" alt="D-Luck Property" style="width: 60px; height: 60px; object-fit: contain;" />
+            <img src="cid:12-real-estate-logo" alt="The 12 Real Estate Pattaya" style="width: 120px; height: auto; object-fit: contain;" />
           </div>
-          <h1 style="color: #1f2937; margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.5px;">D-Luck Property</h1>
+          <h1 style="color: #1f2937; margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.5px;">The 12 Real Estate Pattaya</h1>
           <p style="color: #6b7280; margin: 8px 0 0 0; font-size: 14px; font-weight: 400;">Property Inquiry Notification</p>
         </div>
         
@@ -280,13 +280,13 @@ class EmailService {
         <div style="background: #f9fafb; padding: 20px; text-align: center; border-top: 1px solid #e5e7eb;">
           <div style="margin-bottom: 12px;">
             <p style="margin: 0; color: #6b7280; font-size: 13px; line-height: 1.5;">
-              ข้อความสอบถามนี้ได้รับจากเว็บไซต์ <strong style="color: #374151;">D-Luck Property</strong><br>
+              ข้อความสอบถามนี้ได้รับจากเว็บไซต์ <strong style="color: #374151;">The 12 Real Estate Pattaya</strong><br>
               เวลาที่ได้รับ: ${new Date().toLocaleString('th-TH', { timeZone: 'Asia/Bangkok' })}
             </p>
           </div>
           <div style="border-top: 1px solid #e5e7eb; padding-top: 12px;">
             <p style="margin: 0; color: #9ca3af; font-size: 11px;">
-              © 2025 D-Luck Property. All rights reserved.
+              © 2025 The 12 Real Estate Pattaya. All rights reserved.
             </p>
           </div>
         </div>
@@ -294,7 +294,7 @@ class EmailService {
     `;
 
     const textVersion = `
-      D-Luck Property - New Property Inquiry
+      The 12 Real Estate Pattaya - New Property Inquiry
       
       สวัสดีคุณ ${agentName}
       มีลูกค้าสนใจทรัพย์สินของคุณและต้องการติดต่อ กรุณาตรวจสอบรายละเอียดด้านล่างและติดต่อกลับโดยเร็วที่สุด
@@ -316,7 +316,7 @@ class EmailService {
 
     return await this.sendEmail({
       to: agentEmail, // ส่งไปหาเจ้าของ property
-      // CC ไปที่ supakorn เสมอ
+      cc: 'krittiyakwang@gmail.com',
       subject: emailSubject,
       html,
       text: textVersion
