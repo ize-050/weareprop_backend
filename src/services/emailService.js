@@ -213,9 +213,8 @@ class EmailService {
     const agentName = property.user?.name || 'Agent';
     const property_code = property.propertyCode;
 
-    if (!agentEmail) {
-      throw new Error('Property owner email not found');
-    }
+    // Fallback to admin email if agent email not found
+    const toEmail = agentEmail || await this.getAdminEmail();
     const emailSubject = `Property Inquiry: ${propertyTitle}`;
     
     const html = `
@@ -315,7 +314,7 @@ class EmailService {
     `;
 
     return await this.sendEmail({
-      to: agentEmail, // ส่งไปหาเจ้าของ property
+      to: toEmail,
       cc: 'krittiyakwang@gmail.com',
       subject: emailSubject,
       html,

@@ -5,7 +5,8 @@ const { BadRequestError } = require('../utils/errors');
 class ContactFormController {
   async submitContactForm(req, res) {
     try {
-      const { name, email, phone, subject, message, propertyId, propertyTitle, to, cc } = req.body;
+      const { name, email, phone, subject, message, propertyTitle, to, cc } = req.body;
+      const propertyId = req.body.propertyId ? parseInt(req.body.propertyId, 10) : null;
 
       // ตรวจสอบข้อมูลที่จำเป็น
       if (!name || !email || !message) {
