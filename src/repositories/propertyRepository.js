@@ -1,4 +1,5 @@
 const { Prisma, PrismaClient } = require('@prisma/client');
+const { buildOwnershipQuotaCondition } = require('../utils/ownershipQuota');
 const path = require("path");
 const fs = require("fs");
 const prisma = new PrismaClient();
@@ -34,6 +35,8 @@ class PropertyRepository {
       zoneId,
       search,
       userId,
+      propertyQuota, // Thai / Foreign quota filter (also accepted as `quota`)
+      quota,
       // status = 'ACTIVE',
     } = options;
 
@@ -76,6 +79,11 @@ class PropertyRepository {
     if (bedrooms) where.bedrooms = Number(bedrooms);
     if (bathrooms) where.bathrooms = Number(bathrooms);
     if (zoneId) where.zoneId = Number(zoneId);
+
+    // Ownership quota filter (Thai Quota / Foreign Quota).
+    // Put in AND so it does not clash with the text search OR.
+    const quotaCondition = buildOwnershipQuotaCondition(propertyQuota || quota);
+    if (quotaCondition) where.AND = [...(where.AND || []), quotaCondition];
 
     // Build listings filter (for listingType and price range)
     const listingsFilter = {};

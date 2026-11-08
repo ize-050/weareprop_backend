@@ -1,4 +1,5 @@
 const { PrismaClient } = require('@prisma/client');
+const { buildOwnershipQuotaCondition } = require('../utils/ownershipQuota');
 const prisma = new PrismaClient();
 
 /**
@@ -28,6 +29,7 @@ class SearchService {
         order = 'desc',
         type,
         propertyQuota,
+        quota,
       } = filters;
       
       const skip = (page - 1) * Number(limit);
@@ -69,9 +71,12 @@ class SearchService {
         where.bathrooms = Number(bathrooms);
       }
       
-      // Property Quota filter (ownership_quota in database)
-      if (propertyQuota) {
-        where.ownershipQuota = propertyQuota.toUpperCase();
+      // Property Quota filter (ownership_quota in database).
+      // Accepts `propertyQuota` or `quota`: thai / foreign / THAI / FOREIGN / Thai Quota / Foreign Quota.
+      // Put in AND so it does not clash with the text search OR.
+      const quotaCondition = buildOwnershipQuotaCondition(propertyQuota || quota);
+      if (quotaCondition) {
+        where.AND = [...(where.AND || []), quotaCondition];
       }
       
       // Search text
